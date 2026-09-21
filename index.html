@@ -1,12 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" src="style.css"></head>link> 
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>They're Here!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="game">
+      <h1 id="title">THEY'RE HERE!</h1>
+      <p id="message">Something strange is happening outside...</p>
+
+      <section class="scene" id="scene">
+        <div class="stars">
+          <span class="star star1"></span>
+          <span class="star star2"></span>
+          <span class="star star3"></span>
+          <span class="star star4"></span>
+          <span class="star star5"></span>
+          <span class="star star6"></span>
+          <span class="star star7"></span>
+          <span class="star star8"></span>
+        </div>
+
+        <div class="building">
+          <div class="window window1"></div>
+          <div class="window window2"></div>
+          <div class="door"></div>
+        </div>
+
+        <div class="person" id="person">
+          <div class="head"></div>
+          <div class="body"></div>
+          <div class="arm arm-left"></div>
+          <div class="arm arm-right"></div>
+          <div class="leg leg-left"></div>
+          <div class="leg leg-right"></div>
+        </div>
+
+        <div class="ufo" id="ufo">
+          <div class="dome"></div>
+          <div class="ship">
+            <span class="ufo-light light1"></span>
+            <span class="ufo-light light2"></span>
+            <span class="ufo-light light3"></span>
+          </div>
+        </div>
+
+        <div class="beam" id="beam"></div>
+      </section>
+      <section class="controls" id="controls">
+        <button id="restartBtn">RESTART</button>
+        <button id="hideBtn">HIDE</button>
+        <button id="lightsBtn">TURN OFF LIGHTS</button>
+        <button id="runBtn">RUN!</button>
+        <button id="waveBtn">WAVE AT THEM</button>
+      </section>
+    </main>
+
     <script src="script.js" defer></script>
-</body>
+  </body>
 </html>

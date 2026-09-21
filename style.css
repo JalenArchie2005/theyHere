@@ -1,0 +1,503 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background: #050816;
+  color: white;
+}
+
+.game {
+  width: min(1000px, 95%);
+  margin: 0 auto;
+  padding: 20px 0 35px;
+  text-align: center;
+}
+
+h1 {
+  margin: 5px 0;
+  letter-spacing: 4px;
+}
+
+#message {
+  min-height: 28px;
+  margin: 8px 0 15px;
+  font-size: 18px;
+}
+
+.scene {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  border: 3px solid #596275;
+  border-radius: 14px;
+  background: linear-gradient(#030617 0%, #101b3d 72%, #182a35 72%);
+}
+
+.star {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite alternate;
+}
+
+.star1 {
+  left: 8%;
+  top: 12%;
+  animation-delay: 0.1s;
+}
+.star2 {
+  left: 20%;
+  top: 28%;
+  animation-delay: 0.7s;
+}
+.star3 {
+  left: 34%;
+  top: 10%;
+  animation-delay: 1.1s;
+}
+.star4 {
+  left: 48%;
+  top: 22%;
+  animation-delay: 0.4s;
+}
+.star5 {
+  left: 61%;
+  top: 8%;
+  animation-delay: 1.4s;
+}
+.star6 {
+  left: 73%;
+  top: 30%;
+  animation-delay: 0.8s;
+}
+.star7 {
+  left: 85%;
+  top: 14%;
+  animation-delay: 0.2s;
+}
+.star8 {
+  left: 92%;
+  top: 35%;
+  animation-delay: 1.2s;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.25;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+.building {
+  position: absolute;
+  left: 6%;
+  bottom: 70px;
+  width: 240px;
+  height: 190px;
+  background: #252b35;
+  border: 4px soild #11151b;
+}
+
+.window {
+  position: absolute;
+  top: 40px;
+  width: 55px;
+  height: 55px;
+  background: #ffe680;
+  border: 5px soild #11151b;
+}
+
+.window1 {
+  left: 30px;
+}
+.window2 {
+  right: 30px;
+}
+
+.door {
+  position: absolute;
+  left: 92px;
+  bottom: 0;
+  width: 55px;
+  height: 80px;
+  background: #563d24;
+}
+
+.ground {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 72px;
+  background: #16251b;
+  border-top: 5px soild #263d2c;
+}
+
+.person {
+  position: absolute;
+  right: 20%;
+  bottom: 70px;
+  width: 70px;
+  height: 130px;
+  z-index: 5;
+}
+
+.head {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 32px;
+  height: 32px;
+  background: #f0c8a0;
+  border-radius: 50%;
+}
+
+.body {
+  position: absolute;
+  left: 24px;
+  top: 30px;
+  width: 24px;
+  height: 55px;
+  background: #3d7ea6;
+}
+
+.arm,
+.leg {
+  position: absolute;
+  width: 10px;
+  background: #f0c8a0;
+  transform-origin: top center;
+}
+
+.arm {
+  height: 48px;
+  top: 35px;
+}
+.arm-left {
+  left: 17px;
+  transform: rotate(18deg);
+}
+.arm-right {
+  right: 17px;
+  transform: rotate(-18deg);
+}
+
+.leg {
+  height: 50px;
+  top: 80px;
+  background: #30343b;
+}
+.leg-left {
+  left: 17px;
+  transform: rotate(8deg);
+}
+.leg-right {
+  right: 22px;
+  transform: rotate(-8deg);
+}
+
+.ufo {
+  position: absolute;
+  top: 65px;
+  left: -260px;
+  width: 220px;
+  height: 105px;
+  z-index: 8;
+  animation:
+    flyIn 4s ease-in-out forwards,
+    hover 2s 4s ease-in-out infinite alternate;
+}
+
+.dome {
+  position: absolute;
+  left: 65px;
+  top: 0;
+  width: 90px;
+  height: 50px;
+  background: rgba(130, 220, 255, 0.75);
+  border-radius: 90px 90px 15px 15px;
+}
+
+.ship {
+  position: absolute;
+  left: 10px;
+  top: 38px;
+  width: 200px;
+  height: 55px;
+  background: #858b85;
+  border-radius: 50%;
+  border: 4px solid #4b5059;
+}
+
+.ufo-light {
+  position: absolute;
+  bottom: 6px;
+  width: 18px;
+  height: 18px;
+  background: #fff36b;
+  border-radius: 50%;
+  animation: none;
+  opacity: 1;
+  box-shadow: none;
+  animation: blink 0.6s infinite alternate;
+}
+
+.light1 {
+  left: 40px;
+}
+.light2 {
+  left: 88px;
+  animation-delay: 0.2s;
+}
+
+.light3 {
+  right: 40px;
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0.25;
+    box-shadow: 0 0 2px #fff36b;
+  }
+  to {
+    opacity: 1;
+    box-shadow: 0 0 18px #fff36b;
+  }
+}
+
+.beam {
+  position: absolute;
+  top: 145px;
+  left: 65%;
+  width: 180px;
+  height: 300px;
+  background: linear-gradient(
+    to bottom,
+    rgba(145, 255, 222, 0.55),
+    rgba(145, 255, 222, 0.05)
+  );
+  clip-path: polygon(38% 0, 62% 0, 100% 100%, 0 100%);
+  opacity: 0;
+  z-index: 3;
+}
+
+.beam.active {
+  opacity: 1;
+  animation: beamPulse 0.7s infinite alternate;
+}
+
+@keyframes beamPulse {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 0.85;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.controls button {
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.controls button:hover {
+  transform: translativeY(-3px) scale(1.03);
+}
+
+.controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.panic {
+  animation: panic 0.12s infinite alternate;
+}
+@keyframes panic {
+  from {
+    transform: translativeX(-4px) rotate(-2deg);
+  }
+
+  to {
+    transform: translativeX(4px) rotate(2deg);
+  }
+}
+
+.hidden-person {
+  right: 74%;
+  transform: scale(0.75);
+  opacity: 0.35;
+}
+
+.running {
+  animation: runAway 1.4s linear forwards;
+}
+@keyframes runAway {
+  from {
+    right: 20%;
+  }
+
+  to {
+    right: 90%;
+  }
+}
+
+.abducted {
+  animation: abduct 3s ease-in forwards;
+}
+@keyframes abduct {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  60% {
+    transform: translateY(-220px) rotate(12deg) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-330px) rotate(25deg) scale(0.25);
+    opacity: 0;
+  }
+}
+
+@keyframes flyIn {
+  from {
+    left: -260px;
+    transform: rotate(-8deg);
+  }
+  to {
+    left: 62%;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes hover {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+
+.panic {
+  animation: panic 0.12s infinite alternate;
+}
+
+@keyframes panic {
+  from {
+    transform: translativeX(-4px) rotate(-2deg);
+  }
+  to {
+    transform: translateX(4px) rotate(2deg);
+  }
+}
+
+.hidden-person {
+  right: 74%;
+  transform: scale(0.75);
+  opacity: 0.35;
+}
+
+.running {
+  animation: runAway 1.4s linear fowards;
+}
+@keyframes runAway {
+  from {
+    right: 20%;
+  }
+  to {
+    right: 90%;
+  }
+}
+
+.abducted {
+  animation: abduct 3s ease-in forwards;
+}
+@keyframes abduct {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateY(-220px) rotate(12deg) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-330px) rotate(25deg) scale(0.25);
+    opacity: 0;
+  }
+}
+
+.screen-shake {
+  animation: screenShake 0.15s 8;
+}
+
+@keyframes screenShake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, -3px);
+  }
+  50% {
+    transform: translate(-5px, 3px);
+  }
+  75% {
+    transform: translate(3px, 5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.fly-away {
+  animation: flyAway 2s ease-in fowards !important;
+}
+
+@keyframes flyAway {
+  from {
+    left: 62%;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    left: 120%;
+    transform: translateY(-180px) scale(0.35) rotate(15deg);
+  }
+}
+
+.scanning {
+  animation: scanColor 0.45s infinite alternate;
+}
+
+@keyframes scanColor {
+  from {
+    filter: brightness(1);
+  }
+  to {
+    filter: brightness(1.8);
+  }
+}
